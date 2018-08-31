@@ -7,13 +7,13 @@ image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/28211-pred
 x-kinRank: "7"
 x-alexaRank: "292227"
 tags: PredictHQ
-created: "2018-06-26"
-modified: "2018-06-26"
+created: "2018-08-31"
+modified: "2018-08-31"
 url: https://raw.githubusercontent.com/streamdata-gallery-organizations/predicthq/master/_listings/predicthq/apis.md
 specificationVersion: "0.14"
 apis:
-- name: PredictHQ Retrieve Analysis
-  x-api-slug: predicthq
+- name: PredictHQ API - Retrieve Analysis
+  x-api-slug: v1signalssignal-idanalysis-get
   description: |-
     This action returns a complete analysis of your Signal, which includes what your actual figures were, what could be expected, and what was in excess in terms of **demand**, **lead time** and **duration** and can be explained using events. Note that lead time (`lead`) and duration (`span`) analysis are only available when an `initiated` and `completed` dates are provided with data points, respectively.
 
@@ -33,63 +33,68 @@ apis:
     A high `significance` means that only extreme spikes and troughs will be attributed to events. We use 50% as a default, which corresponds to ~0.68 standard deviations.
   image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/28211-predicthq.jpg
   humanURL: http://www.predicthq.com/
-  baseURL: https://api.predicthq.com////v1/signals/{signal_id}/analysis/
-  tags: Signals,Signal,Analysis
+  baseURL: https://api.predicthq.com//
+  tags: SaaS, Technology, Events, API Provider, Profiles, Service API, Relative Data,
+    Relative StreamRank, Streams
   properties:
   - type: x-postman-collection
     url: https://raw.githubusercontent.com/streamdata-gallery-organizations/predicthq/master/_listings/predicthq/v1signalssignal-idanalysis-get-postman.md
   - type: x-openapi-spec
     url: https://raw.githubusercontent.com/streamdata-gallery-organizations/predicthq/master/_listings/predicthq/v1signalssignal-idanalysis-get-openapi.md
-- name: PredictHQ Retrieve A Signal
-  x-api-slug: predicthq
+- name: PredictHQ API - Retrieve A Signal
+  x-api-slug: v1signalssignal-id-get
   description: This action returns a Signal according to the unique identifier you
     provide.
   image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/28211-predicthq.jpg
   humanURL: http://www.predicthq.com/
-  baseURL: https://api.predicthq.com////v1/signals/{signal_id}/
-  tags: Signals,Signal
+  baseURL: https://api.predicthq.com//
+  tags: SaaS, Technology, Events, API Provider, Profiles, Service API, Relative Data,
+    Relative StreamRank, Streams
   properties:
   - type: x-postman-collection
     url: https://raw.githubusercontent.com/streamdata-gallery-organizations/predicthq/master/_listings/predicthq/v1signalssignal-id-get-postman.md
   - type: x-openapi-spec
     url: https://raw.githubusercontent.com/streamdata-gallery-organizations/predicthq/master/_listings/predicthq/v1signalssignal-id-get-openapi.md
-- name: PredictHQ Update a Signal
-  x-api-slug: predicthq
+- name: PredictHQ API - Update a Signal
+  x-api-slug: v1signalssignal-id-put
   description: This action modifies a Signal according to the unique identifier you
     provide.
   image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/28211-predicthq.jpg
   humanURL: http://www.predicthq.com/
-  baseURL: https://api.predicthq.com////v1/signals/{signal_id}/
-  tags: Signals,Signal
+  baseURL: https://api.predicthq.com//
+  tags: SaaS, Technology, Events, API Provider, Profiles, Service API, Relative Data,
+    Relative StreamRank, Streams
   properties:
   - type: x-openapi-spec
     url: https://raw.githubusercontent.com/streamdata-gallery-organizations/predicthq/master/_listings/predicthq/v1signalssignal-id-put-openapi.md
-- name: PredictHQ Delete A Signal
-  x-api-slug: predicthq
+- name: PredictHQ API - Delete A Signal
+  x-api-slug: v1signalssignal-id-delete
   description: This action will delete a Signal altogether along with the Data Points
     associated with it, according to the unique identifier you provide.
   image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/28211-predicthq.jpg
   humanURL: http://www.predicthq.com/
-  baseURL: https://api.predicthq.com////v1/signals/{signal_id}/
-  tags: Signals,Signal
+  baseURL: https://api.predicthq.com//
+  tags: SaaS, Technology, Events, API Provider, Profiles, Service API, Relative Data,
+    Relative StreamRank, Streams
   properties:
   - type: x-openapi-spec
     url: https://raw.githubusercontent.com/streamdata-gallery-organizations/predicthq/master/_listings/predicthq/v1signalssignal-id-delete-openapi.md
-- name: PredictHQ Search Places
-  x-api-slug: predicthq
+- name: PredictHQ API - Search Places
+  x-api-slug: v1places-get
   description: |-
     Use the below parameters to search and filter all places. Places are sorted by relevance (location or text query proximity).
 
     A search requires at least one of the `q`, `id`, `country` or `location` parameters.
   image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/28211-predicthq.jpg
   humanURL: http://www.predicthq.com/
-  baseURL: https://api.predicthq.com////v1/places/
-  tags: Places
+  baseURL: https://api.predicthq.com//
+  tags: SaaS, Technology, Events, API Provider, Profiles, Service API, Relative Data,
+    Relative StreamRank, Streams
   properties:
   - type: x-openapi-spec
     url: https://raw.githubusercontent.com/streamdata-gallery-organizations/predicthq/master/_listings/predicthq/v1places-get-openapi.md
-- name: PredictHQ Create Data Points
-  x-api-slug: predicthq
+- name: PredictHQ API - Create Data Points
+  x-api-slug: v1signalssignal-idsink-post
   description: |-
     Every Signal needs a series of Data Points for the API to do its job.
 
@@ -106,105 +111,113 @@ apis:
     If this is the case, the response code will be `202 Accepted` instead of `201 Created`.
   image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/28211-predicthq.jpg
   humanURL: http://www.predicthq.com/
-  baseURL: https://api.predicthq.com////v1/signals/{signal_id}/sink/
-  tags: Signals,Signal,Sink
+  baseURL: https://api.predicthq.com//
+  tags: SaaS, Technology, Events, API Provider, Profiles, Service API, Relative Data,
+    Relative StreamRank, Streams
   properties:
   - type: x-openapi-spec
     url: https://raw.githubusercontent.com/streamdata-gallery-organizations/predicthq/master/_listings/predicthq/v1signalssignal-idsink-post-openapi.md
-- name: PredictHQ Revoking an Access Token
-  x-api-slug: predicthq
+- name: PredictHQ API - Revoking an Access Token
+  x-api-slug: oauth2revoke-post
   description: |-
     Access Tokens never expire so once you have it, it's yours for the life of your PredictHQ API subscription.
 
     However, if you think your token may have been compromised, you have the power to revoke it at any time.
   image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/28211-predicthq.jpg
   humanURL: http://www.predicthq.com/
-  baseURL: https://api.predicthq.com////oauth2/revoke/
-  tags: Oauth2,Revoke
+  baseURL: https://api.predicthq.com//
+  tags: SaaS, Technology, Events, API Provider, Profiles, Service API, Relative Data,
+    Relative StreamRank, Streams
   properties:
   - type: x-postman-collection
     url: https://raw.githubusercontent.com/streamdata-gallery-organizations/predicthq/master/_listings/predicthq/oauth2revoke-post-postman.md
   - type: x-openapi-spec
     url: https://raw.githubusercontent.com/streamdata-gallery-organizations/predicthq/master/_listings/predicthq/oauth2revoke-post-openapi.md
-- name: PredictHQ Retrieve Account Details
-  x-api-slug: predicthq
+- name: PredictHQ API - Retrieve Account Details
+  x-api-slug: v1accountsself-get
   description: If you need your account details for whatever reason, it's really easy
     to get them.
   image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/28211-predicthq.jpg
   humanURL: http://www.predicthq.com/
-  baseURL: https://api.predicthq.com////v1/accounts/self/
-  tags: Accounts,Self
+  baseURL: https://api.predicthq.com//
+  tags: SaaS, Technology, Events, API Provider, Profiles, Service API, Relative Data,
+    Relative StreamRank, Streams
   properties:
   - type: x-postman-collection
     url: https://raw.githubusercontent.com/streamdata-gallery-organizations/predicthq/master/_listings/predicthq/v1accountsself-get-postman.md
   - type: x-openapi-spec
     url: https://raw.githubusercontent.com/streamdata-gallery-organizations/predicthq/master/_listings/predicthq/v1accountsself-get-openapi.md
-- name: PredictHQ Retrieve All Signals
-  x-api-slug: predicthq
+- name: PredictHQ API - Retrieve All Signals
+  x-api-slug: v1signals-get
   description: It's easy to get a list of all Signals that are associated with your
     account.
   image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/28211-predicthq.jpg
   humanURL: http://www.predicthq.com/
-  baseURL: https://api.predicthq.com////v1/signals/
-  tags: Signals
+  baseURL: https://api.predicthq.com//
+  tags: SaaS, Technology, Events, API Provider, Profiles, Service API, Relative Data,
+    Relative StreamRank, Streams
   properties:
   - type: x-openapi-spec
     url: https://raw.githubusercontent.com/streamdata-gallery-organizations/predicthq/master/_listings/predicthq/v1signals-get-openapi.md
-- name: PredictHQ Create a Signal
-  x-api-slug: predicthq
+- name: PredictHQ API - Create a Signal
+  x-api-slug: v1signals-post
   description: Before you do anything else, you need to create a new Signal that represents
     a time series that's important to your business.
   image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/28211-predicthq.jpg
   humanURL: http://www.predicthq.com/
-  baseURL: https://api.predicthq.com////v1/signals/
-  tags: Signals
+  baseURL: https://api.predicthq.com//
+  tags: SaaS, Technology, Events, API Provider, Profiles, Service API, Relative Data,
+    Relative StreamRank, Streams
   properties:
   - type: x-openapi-spec
     url: https://raw.githubusercontent.com/streamdata-gallery-organizations/predicthq/master/_listings/predicthq/v1signals-post-openapi.md
-- name: PredictHQ Retrieve Events Calendar
-  x-api-slug: predicthq
+- name: PredictHQ API - Retrieve Events Calendar
+  x-api-slug: v1eventscalendar-get
   description: |-
     This endpoint accepts the same parameters as the ones described in Retrieve All Events and can be used to get a calendar view of all matching events that are available to your account.
 
     Each day in the calendar contains aggregate counts of all _active_ events for that day.
   image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/28211-predicthq.jpg
   humanURL: http://www.predicthq.com/
-  baseURL: https://api.predicthq.com////v1/events/calendar/
-  tags: Events,Calendar
+  baseURL: https://api.predicthq.com//
+  tags: SaaS, Technology, Events, API Provider, Profiles, Service API, Relative Data,
+    Relative StreamRank, Streams
   properties:
   - type: x-postman-collection
     url: https://raw.githubusercontent.com/streamdata-gallery-organizations/predicthq/master/_listings/predicthq/v1eventscalendar-get-postman.md
   - type: x-openapi-spec
     url: https://raw.githubusercontent.com/streamdata-gallery-organizations/predicthq/master/_listings/predicthq/v1eventscalendar-get-openapi.md
-- name: PredictHQ Retrieve Events Count
-  x-api-slug: predicthq
+- name: PredictHQ API - Retrieve Events Count
+  x-api-slug: v1eventscount-get
   description: This endpoint accepts the same parameters as the ones described in
     Retrieve All Events and can be used to get aggregated counts of all matching events
     that are available to your account.
   image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/28211-predicthq.jpg
   humanURL: http://www.predicthq.com/
-  baseURL: https://api.predicthq.com////v1/events/count/
-  tags: Events,Count
+  baseURL: https://api.predicthq.com//
+  tags: SaaS, Technology, Events, API Provider, Profiles, Service API, Relative Data,
+    Relative StreamRank, Streams
   properties:
   - type: x-postman-collection
     url: https://raw.githubusercontent.com/streamdata-gallery-organizations/predicthq/master/_listings/predicthq/v1eventscount-get-postman.md
   - type: x-openapi-spec
     url: https://raw.githubusercontent.com/streamdata-gallery-organizations/predicthq/master/_listings/predicthq/v1eventscount-get-openapi.md
-- name: PredictHQ Retrieve All Events
-  x-api-slug: predicthq
+- name: PredictHQ API - Retrieve All Events
+  x-api-slug: v1events-get
   description: Use the below parameters to search and filter all events that are available
     to your account.
   image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/28211-predicthq.jpg
   humanURL: http://www.predicthq.com/
-  baseURL: https://api.predicthq.com////v1/events/
-  tags: Events
+  baseURL: https://api.predicthq.com//
+  tags: SaaS, Technology, Events, API Provider, Profiles, Service API, Relative Data,
+    Relative StreamRank, Streams
   properties:
   - type: x-postman-collection
     url: https://raw.githubusercontent.com/streamdata-gallery-organizations/predicthq/master/_listings/predicthq/v1events-get-postman.md
   - type: x-openapi-spec
     url: https://raw.githubusercontent.com/streamdata-gallery-organizations/predicthq/master/_listings/predicthq/v1events-get-openapi.md
-- name: PredictHQ Requesting an Access Token
-  x-api-slug: predicthq
+- name: PredictHQ API - Requesting an Access Token
+  x-api-slug: oauth2token-post
   description: |-
     When requesting an Access Token, use the `client_credentials` grant type, then request the scope or scopes you wish to have access to.
 
@@ -217,40 +230,34 @@ apis:
     Please note that Access Tokens requested via the client_credentials grant type never expire.
   image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/28211-predicthq.jpg
   humanURL: http://www.predicthq.com/
-  baseURL: https://api.predicthq.com////oauth2/token/
-  tags: Oauth2,Token
+  baseURL: https://api.predicthq.com//
+  tags: SaaS, Technology, Events, API Provider, Profiles, Service API, Relative Data,
+    Relative StreamRank, Streams
   properties:
   - type: x-postman-collection
     url: https://raw.githubusercontent.com/streamdata-gallery-organizations/predicthq/master/_listings/predicthq/oauth2token-post-postman.md
   - type: x-openapi-spec
     url: https://raw.githubusercontent.com/streamdata-gallery-organizations/predicthq/master/_listings/predicthq/oauth2token-post-openapi.md
-- name: PredictHQ Retrieve All Dimensions
-  x-api-slug: predicthq
+- name: PredictHQ API - Retrieve All Dimensions
+  x-api-slug: v1signalssignal-iddimensions-get
   description: This action returns a summary for each dimension of your Signal.
   image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/28211-predicthq.jpg
   humanURL: http://www.predicthq.com/
-  baseURL: https://api.predicthq.com////v1/signals/{signal_id}/dimensions/
-  tags: Signals,Signal,Dimensions
+  baseURL: https://api.predicthq.com//
+  tags: SaaS, Technology, Events, API Provider, Profiles, Service API, Relative Data,
+    Relative StreamRank, Streams
   properties:
   - type: x-postman-collection
     url: https://raw.githubusercontent.com/streamdata-gallery-organizations/predicthq/master/_listings/predicthq/v1signalssignal-iddimensions-get-postman.md
   - type: x-openapi-spec
     url: https://raw.githubusercontent.com/streamdata-gallery-organizations/predicthq/master/_listings/predicthq/v1signalssignal-iddimensions-get-openapi.md
-- name: PredictHQ
-  x-api-slug: predicthq
-  description: Event visibility yields higher returns & reduces operational costs.
-    PredictHQ is the worlds largest source of intelligent event data making businesses
-    smarter.
-  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/28211-predicthq.jpg
-  humanURL: http://www.predicthq.com/
-  baseURL: https://api.predicthq.com//
-  tags: PredictHQ
-  properties:
-  - type: x-openapi-spec
-    url: https://raw.githubusercontent.com/streamdata-gallery-organizations/predicthq/master/_listings/predicthq/openapi.md
 x-common:
 - type: x-website
   url: http://www.predicthq.com/
+- type: x-api-gallery
+  url: http://postmark.api.gallery.streamdata.io
+- type: x-api-stack
+  url: http://predicthq.stack.network
 - type: x-crunchbase
   url: https://crunchbase.com/organization/predicthq
 - type: x-email
